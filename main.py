@@ -36,7 +36,6 @@ def main(amount_to_spend: int) -> None:
             payer, points, timestamp = row
             transactions.append(Transaction(payer, int(points), parse_timestamp(timestamp)))
     
-    transactions.sort(key=lambda x:x.timestamp)
     # through this API, we can change only main() to adapt different data format.
     balances = point_spender(transactions, amount_to_spend)
     print(balances)
