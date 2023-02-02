@@ -10,7 +10,7 @@ class TestMain(unittest.TestCase):
         sys.stdout = captured_output
 
         # Call the main function with 5000 as the argument
-        main(["5000"])
+        main(["main.py", "5000"])
 
         # Reset stdout
         sys.stdout = sys.__stdout__
