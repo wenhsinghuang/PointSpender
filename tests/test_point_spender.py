@@ -39,7 +39,8 @@ class TestPointSpender(unittest.TestCase):
     def test_point_spender_with_illegal_transactions(self):
         transactions = [
             Transaction("A", 1000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
-            Transaction("B", -2000, datetime.strptime("2020-11-02T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+            Transaction("B", -2000, datetime.strptime("2020-11-02T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
+            Transaction("B", 25000, datetime.strptime("2020-11-03T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
         ]
         amount_to_spend = 3000
         try:
