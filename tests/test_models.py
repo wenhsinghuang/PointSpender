@@ -20,7 +20,7 @@ class TestModels(unittest.TestCase):
         self.assertEqual(t.points, 3000)
 
     def test_transactions_str(self):
-        t = Transaction("DANNON A", 300, "2020-10-31T10:00:00Z")
+        t = Transaction("DANNON A", 300, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
         self.assertEqual(str(t), "DANNON A 300 2020-10-31T10:00:00Z")
 
     def test_transactions_sort(self):
