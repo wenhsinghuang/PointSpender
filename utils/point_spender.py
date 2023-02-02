@@ -18,7 +18,7 @@ def point_spender(transactions: List[Transaction], amount_to_spend: int) -> Dict
     transactions.sort(key=lambda x: x.timestamp)
     
     # check if amount_to_spend over total points the user have.
-    if sum(transactions, key=lambda x:x.points) < amount_to_spend:
+    if sum(t.points for t in transactions) < amount_to_spend:
         raise Exception("Error: The amount to spend should not exceed total balance.")
 
     # calculate temporary transactions that have handled the history spending.
