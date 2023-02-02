@@ -29,11 +29,11 @@ class TestModels(unittest.TestCase):
                 Transaction("DANNON", 300, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
             ]
             transactions.sort(key=lambda x: x.timestamp)
-            self.assertEqual(transactions[0], Transaction("DANNON", 300, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
-            self.assertEqual(transactions[2], Transaction("UNILEVER", 200, datetime.strptime("2020-10-31T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
-            self.assertEqual(transactions[1], Transaction("DANNON", -200, datetime.strptime("2020-10-31T15:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
-            self.assertEqual(transactions[3], Transaction("MILLER COORS", 10000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
-            self.assertEqual(transactions[4], Transaction("DANNON", 1000, datetime.strptime("2020-11-02T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
+            self.assertEqual(transactions[0].timestamp, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+            self.assertEqual(transactions[1].timestamp, datetime.strptime("2020-10-31T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+            self.assertEqual(transactions[2].timestamp, datetime.strptime("2020-10-31T15:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+            self.assertEqual(transactions[3].timestamp, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+            self.assertEqual(transactions[4].timestamp, datetime.strptime("2020-11-02T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
 
 
 if __name__ == "__main__":

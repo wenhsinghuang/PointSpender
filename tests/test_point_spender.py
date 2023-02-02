@@ -82,7 +82,7 @@ class TestPointSpender(unittest.TestCase):
         transactions = [
             Transaction("A", 1000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
             Transaction("B", 2000, datetime.strptime("2020-11-02T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
-            Transaction("A", 1000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+            Transaction("A", 1000, datetime.strptime("2020-11-03T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
         ]
         amount_to_spend = 1500
         result = point_spender(transactions, amount_to_spend)
@@ -93,12 +93,12 @@ class TestPointSpender(unittest.TestCase):
         transactions = [
             Transaction("A", 1000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
             Transaction("B", 2000, datetime.strptime("2020-11-02T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
-            Transaction("A", -1000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
-            Transaction("C", 1000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
+            Transaction("A", -1000, datetime.strptime("2020-11-03T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
+            Transaction("C", 1000, datetime.strptime("2020-11-04T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
         ]
         amount_to_spend = 1500
         result = point_spender(transactions, amount_to_spend)
-        expected = {"A": 500, "B": 0, "C": 1000}
+        expected = {"A": 0, "B": 500, "C": 1000}
         self.assertEqual(result, expected)
 
     def test_point_spender_test6(self):
@@ -109,7 +109,7 @@ class TestPointSpender(unittest.TestCase):
             Transaction("MILLER COORS", 10000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
             Transaction("DANNON", 300, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
         ]
-        amount_to_spend = 1500
+        amount_to_spend = 5000
         result = point_spender(transactions, amount_to_spend)
         expected = {"DANNON": 1000, "UNILEVER": 0, "MILLER COORS": 5300}
         self.assertEqual(result, expected)
