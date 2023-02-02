@@ -14,3 +14,5 @@ spend_points is the amount of points to spend
 `python3 -m unittest discover`
 * The tests are located in the test folder and are named test_*.py
 
+## Note
+"wenhsinghuang" (personal) and "whhuang4" (school) both are my account.
