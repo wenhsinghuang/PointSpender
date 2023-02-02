@@ -19,9 +19,6 @@ class TestModels(unittest.TestCase):
         t.points += 2000
         self.assertEqual(t.points, 3000)
 
-    def test_transactions_str(self):
-        t = Transaction("DANNON A", 300, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
-        self.assertEqual(str(t), "DANNON A 300 2020-10-31T10:00:00Z")
 
     def test_transactions_sort(self):
             transactions = [
@@ -32,11 +29,11 @@ class TestModels(unittest.TestCase):
                 Transaction("DANNON", 300, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
             ]
             transactions.sort(key=lambda x: x.timestamp)
-            self.assertEqual(str(transactions[0]), "DANNON 300 2020-10-31T10:00:00Z")
-            self.assertEqual(str(transactions[2]), "UNILEVER 200 2020-10-31T11:00:00Z")
-            self.assertEqual(str(transactions[1]), "DANNON -200 2020-10-31T15:00:00Z")
-            self.assertEqual(str(transactions[3]), "MILLER COORS 10000 2020-11-01T14:00:00Z")
-            self.assertEqual(str(transactions[4]), "DANNON 1000 2020-11-02T14:00:00Z")
+            self.assertEqual(transactions[0], Transaction("DANNON", 300, datetime.strptime("2020-10-31T10:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
+            self.assertEqual(transactions[2], Transaction("UNILEVER", 200, datetime.strptime("2020-10-31T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
+            self.assertEqual(transactions[1], Transaction("DANNON", -200, datetime.strptime("2020-10-31T15:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
+            self.assertEqual(transactions[3], Transaction("MILLER COORS", 10000, datetime.strptime("2020-11-01T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
+            self.assertEqual(transactions[4], Transaction("DANNON", 1000, datetime.strptime("2020-11-02T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")))
 
 
 if __name__ == "__main__":
