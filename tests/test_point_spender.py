@@ -20,7 +20,7 @@ class TestPointSpender(unittest.TestCase):
         except Exception as e:
             assert str(e) == "Error: The amount to spend should not exceed total balance."
 
-    def test_point_spender_with_not_enough_points():
+    def test_point_spender_with_not_enough_points(self):
         transactions = [
             Transaction("DANNON", 1000, datetime.strptime("2020-11-02T14:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
             Transaction("UNILEVER", 200, datetime.strptime("2020-10-31T11:00:00Z", "%Y-%m-%dT%H:%M:%SZ")),
