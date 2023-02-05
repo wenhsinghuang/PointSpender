@@ -3,7 +3,7 @@ This is a Python solution to the Fetch coding exercise for a software engineerin
 
 ## Understanding of the Problem
 The "transactions.csv" file contains transaction records for a user. 
-Transactions with positive points indicate that the user has earned points from the payer, while transactions with negative points indicate that the user has spent points with the payer. 
+Transactions with positive points indicate that the user has earned points from the payer, while transactions with negative points indicate that the user has spent points on the payer for products or coupons. 
 This action is equivalent to the program's "spending" action. To determine the result of current spending, it is necessary to take into account the state of the transaction history after all historical spending transactions have been processed.
 
 # Edge Cases Handling
