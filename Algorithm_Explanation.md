@@ -18,7 +18,7 @@ amount_to_spend = 100
 ("d", -100, "2020-10-4T10:00:00Z")  
 }  
 
-2. Get temporary transactions by dealing with history spend ("d", -100, "2020-10-4T10:00:00Z")  
+3. Get temporary transactions by dealing with history spend ("d", -100, "2020-10-4T10:00:00Z")  
 {  
 ("A", 0, "2020-10-01T10:00:00Z"),  
 ("B", 0, "2020-10-02T10:00:00Z"),  
@@ -27,8 +27,7 @@ amount_to_spend = 100
 ("d", 0, "2020-10-4T10:00:00Z")  
 }  
 
-3. Spend "amount to spend"  
-2. Get temporary transactions by dealing with history spend ("d", -100, "2020-10-4T10:00:00Z")  
+4. Spend "amount to spend"  
 {  
 ("A", 0, "2020-10-01T10:00:00Z"),  
 ("B", 0, "2020-10-02T10:00:00Z"),  
